@@ -28,7 +28,7 @@ class ExcelReportBuilder:
                  conditional_formatting=False):
         self.tables_.append(
             {
-                'title': title, 
+                'title': title + '_govne', 
                 'description': description,
                 'page': page_name,
                 'table': table, 
@@ -87,6 +87,6 @@ class ExcelReportBuilder:
             ws = ExcelReportBuilder.__GetSheetPtr(wb, img['page'])
             ws.add_image(img['image'], img['position'])
 
-        del wb['Sheet']
+        #del wb['Sheet']
         wb.save(self.file_name_)
 
